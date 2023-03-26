@@ -2,7 +2,7 @@ function [W,D] = laplacian(X,manifold)
 
 W = affinity(X,manifold);
 
-if manifold.bNormalizeGraph  % 龙这里用了0，
+if manifold.bNormalizeGraph  
     D = 1./sqrt(sum(W));
     D(isinf(D)) = 0;
     D = diag(sparse(D));
