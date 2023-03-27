@@ -50,7 +50,7 @@ for it = 0:iters
     if it>0
         tem1=0; tem2=0; 
         for p=1:P
-            U{p} = U{p}.*((Xl{p}*Vl+Xu{p}*Vu)./(U{p}*(Vl'*Vl)+U{p}*(Vu'*Vu)+eps));  % update the assemble centroid U
+            U{p} = U{p}.*((X{p}*V)./(U{p}*(V'*V)+eps));  % update the assemble centroid U
             tem1=tem1+w(p)*Xu{p}'*U{p}; tem2=tem2+w(p)*U{p}'*U{p}; 
         end
         Vu3=Vu.*Vu.*Vu;
